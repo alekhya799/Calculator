@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+
+    <style>
+        body {
+            background-color:white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        h1 {
+            color:black;
+            font-size: 35px;
+        }
+
+        .calculator {
+            width: 300px;
+            margin: auto;
+            padding: 25px;
+            background-color:skyblue;
+            border-radius: 15px;
+            box-shadow: 0px 5px 20px whitesmoke;
+        }
+
+        #dis {
+            width: 90%;
+            height: 50px;
+            font-size: 25px;
+            text-align: right;
+            margin-bottom: 20px;
+            padding: 5px;
+            border: 2px solid black;
+            border-radius: 8px;
+        }
+
+        button {
+            width: 55px;
+            height: 50px;
+            margin: 5px;
+            font-size: 20px;
+            color: black;
+            background-color:levender;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: lavender;
+        }
+
+        .operator {
+            background-color:pink;
+        }
+
+        .operator:hover {
+            background-color: pink;
+        }
+
+        .clear {
+            background-color:pink;
+        }
+
+        .clear:hover {
+            background-color:pink;
+        }
+
+        .equal {
+            background-color: pink;
+        }
+
+        .equal:hover {
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="calculator">
+
+        <h1>Calculator</h1>
+
+        <input type="text" id="dis" readonly>
+
+        <br>
+
+        <button onclick="insert('1')">1</button>
+        <button onclick="insert('2')">2</button>
+        <button onclick="insert('3')">3</button>
+        <button class="operator" onclick="insert('+')">+</button>
+
+        <br>
+
+        <button onclick="insert('4')">4</button>
+        <button onclick="insert('5')">5</button>
+        <button onclick="insert('6')">6</button>
+        <button class="operator" onclick="insert('-')">-</button>
+
+        <br>
+
+        <button onclick="insert('7')">7</button>
+        <button onclick="insert('8')">8</button>
+        <button onclick="insert('9')">9</button>
+        <button class="operator" onclick="insert('*')">*</button>
+
+        <br>
+
+        <button onclick="insert('0')">0</button>
+        <button class="operator" onclick="insert('/')">/</button>
+        <button class="equal" onclick="calculate()">=</button>
+        <button class="clear" onclick="clearall()">AC</button>
+
+    </div>
+
+    <script>
+        let exp = "";
+
+        function insert(val) {
+            exp = exp + val;
+            document.getElementById("dis").value = exp;
+        }
+
+        function calculate() {
+            exp = eval(exp);
+            document.getElementById("dis").value = exp;
+        }
+
+        function clearall() {
+            exp = "";
+            document.getElementById("dis").value = exp;
+        }
+    </script>
+
+</body>
+</html>
+
+
